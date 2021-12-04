@@ -1,0 +1,27 @@
+.character {
+  margin-bottom: 45px;
+  padding: 30px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  border: 1px rgba(0, 0, 0, 0.8) solid;
+  border-radius: 30px;
+  background-color: rgba(43, 43, 43, 0.04);
+  box-shadow: 0 -5px 5px rgba(14, 14, 14, 0.03);
+  transition: background-color .3s;
+
+  &__title {
+    width: 20%;
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 30px;
+  }
+}
