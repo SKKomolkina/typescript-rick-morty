@@ -1,20 +1,22 @@
-import React, {ChangeEvent, FunctionComponent} from 'react';
-import {Route, Redirect} from "react-router-dom";
+import React, {FunctionComponent} from 'react';
+import {Route, Redirect, Switch} from "react-router-dom";
 import axios from "axios";
 
 import './App.scss';
 
 import SearchForm from '../SearchForm/SearchForm';
 import CharacterList from "../CharacterList/CharacterList";
-import {ICharacter, IFormData} from "../../types/types";
+import {ICharacter} from "../../types/types";
 import CharacterPage from "../CharacterPage/CharacterPage";
 
 
 const App: FunctionComponent = () => {
     const [characters, setCharacters] = React.useState<ICharacter[]>([]);
 
-    const [selectedName, setSelectedName] = React.useState({});
-    const [chekedCharacter, setCheckedCharacter] = React.useState(false);
+    const [selectedCharacter, setSelectedCharacter] = React.useState<object>({});
+    const [returnCharacter, setReturnCharacter] = React.useState<number>(0);
+
+    const [checkedCharacter, setCheckedCharacter] = React.useState(false);
 
     React.useEffect(() => {
         fetchCharacters();
@@ -33,24 +35,27 @@ const App: FunctionComponent = () => {
 
     return (
         <main className="application">
-            <Route path='/'>
+            <Switch>
+            <Route exact path='/'>
                 <SearchForm
                     characters={characters}
 
-                    selectedName={selectedName}
-                    setSelectedName={setSelectedName}
+                    selectedCharacter={selectedCharacter}
+                    setSelectedCharacter={setSelectedCharacter}
+                    setReturnCharacter={setReturnCharacter}
 
                     setCheckedCharacter={setCheckedCharacter}
                 />
 
                 <CharacterList characters={characters}/>
-            </Route>
 
-            {chekedCharacter ? <Redirect to='/character'/> : null}
+                {checkedCharacter ? <Redirect to='/character'/> : null}
+            </Route>
 
             <Route path='/character'>
-                <CharacterPage selectedName={selectedName}/>
+                <CharacterPage returnCharacter={returnCharacter}/>
             </Route>
+            </Switch>
         </main>
     );
 }

@@ -3,12 +3,15 @@ import {ICharacter} from "../../types/types";
 
 interface SearchFormProps {
     characters: ICharacter[],
-    selectedName: {},
-    setSelectedName: React.Dispatch<React.SetStateAction<object>>,
+    selectedCharacter: object,
+    setSelectedCharacter: React.Dispatch<React.SetStateAction<object>>,
+    setReturnCharacter: React.Dispatch<React.SetStateAction<number>>,
     setCheckedCharacter: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-const SearchForm: FunctionComponent<SearchFormProps> = ({characters, selectedName, setSelectedName, setCheckedCharacter}) => {
+const SearchForm: FunctionComponent<SearchFormProps> = (
+    {characters, setCheckedCharacter, setReturnCharacter}
+) => {
     const [value, setValue] = React.useState('');
 
     const choseCharacter = ((evt: FormEvent<HTMLSelectElement>) => {
@@ -16,12 +19,13 @@ const SearchForm: FunctionComponent<SearchFormProps> = ({characters, selectedNam
     });
 
     const findByName = (inputName: string): void => {
-        setSelectedName(() => characters.find(item => item.name === inputName));
-        setCheckedCharacter(true);
+        const id = characters.find(item => item.name === inputName);
+        console.log(id);
+        if(id) {
+            setReturnCharacter(id.id);
+            setCheckedCharacter(true);
+        }
     }
-
-    console.log(value);
-    console.log(selectedName);
 
     return (
         <form>
