@@ -1,8 +1,11 @@
 .character-list {
   margin: 50px auto 0;
-  width: 80%;
+  max-width: 70%;
 
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 280px);
+  //justify-items: flex-start;
+  justify-content: start;
+  row-gap: 30px;
+  column-gap: 30px;
 }

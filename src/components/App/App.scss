@@ -1,0 +1,26 @@
+.application {
+  max-width: 100%;
+  padding: 30px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    object-fit: fill;
+
+    width: 100vw;
+
+    z-index: -10;
+    overflow: hidden;
+  }
+
+  &__logo {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+}

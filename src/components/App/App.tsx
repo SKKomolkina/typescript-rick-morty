@@ -3,12 +3,13 @@ import {Route, Redirect, Switch} from "react-router-dom";
 import axios from "axios";
 
 import './App.scss';
+import background from '../../images/background2.jpg';
+import logo from '../../images/logo.png';
 
 import SearchForm from '../SearchForm/SearchForm';
 import CharacterList from "../CharacterList/CharacterList";
 import {ICharacter} from "../../types/types";
 import CharacterPage from "../CharacterPage/CharacterPage";
-
 
 const App: FunctionComponent = () => {
     const [characters, setCharacters] = React.useState<ICharacter[]>([]);
@@ -35,26 +36,28 @@ const App: FunctionComponent = () => {
 
     return (
         <main className="application">
+            <img className='application__background' src={background} alt='background'/>
+            <img src={logo} alt={logo} className='application__logo'/>
             <Switch>
-            <Route exact path='/'>
-                <SearchForm
-                    characters={characters}
+                <Route exact path='/'>
+                    <SearchForm
+                        characters={characters}
 
-                    selectedCharacter={selectedCharacter}
-                    setSelectedCharacter={setSelectedCharacter}
-                    setReturnCharacter={setReturnCharacter}
+                        selectedCharacter={selectedCharacter}
+                        setSelectedCharacter={setSelectedCharacter}
+                        setReturnCharacter={setReturnCharacter}
 
-                    setCheckedCharacter={setCheckedCharacter}
-                />
+                        setCheckedCharacter={setCheckedCharacter}
+                    />
 
-                <CharacterList characters={characters}/>
+                    <CharacterList characters={characters}/>
 
-                {checkedCharacter ? <Redirect to='/character'/> : null}
-            </Route>
+                    {checkedCharacter ? <Redirect to='/character'/> : null}
+                </Route>
 
-            <Route path='/character'>
-                <CharacterPage returnCharacter={returnCharacter}/>
-            </Route>
+                <Route path='/character'>
+                    <CharacterPage returnCharacter={returnCharacter}/>
+                </Route>
             </Switch>
         </main>
     );

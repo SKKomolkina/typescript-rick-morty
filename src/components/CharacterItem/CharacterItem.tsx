@@ -12,7 +12,6 @@ const CharacterItem:FunctionComponent<CharacterItemProps> = ({character}) => {
         <article className='character' key={character.id}>
             <img className='character__image' src={character.image} alt={character.name}/>
             <h3 className='character__title'>{character.name}</h3>
-            <p className='character__gender'>{character.gender}</p>
         </article>
     );
 };
