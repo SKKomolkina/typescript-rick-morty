@@ -1,0 +1,18 @@
+.start-page {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  &__portal {
+    margin: 0 auto;
+    max-width: 300px;
+
+    cursor: pointer;
+
+    &-animation {
+      transition: transform 2s ease-in-out;
+      transform: scale(1.5, 1.5) skew(10deg, 0deg) rotate(180deg);
+    }
+  }
+}

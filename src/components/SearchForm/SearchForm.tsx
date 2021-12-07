@@ -1,6 +1,8 @@
 import React, {FormEvent, FunctionComponent, MouseEventHandler} from 'react';
 import {ICharacter} from "../../types/types";
 
+import './SearchForm.scss';
+
 interface SearchFormProps {
     characters: ICharacter[],
     selectedCharacter: object,
@@ -21,23 +23,26 @@ const SearchForm: FunctionComponent<SearchFormProps> = (
     const findByName = (inputName: string): void => {
         const id = characters.find(item => item.name === inputName);
         console.log(id);
-        if(id) {
+        if (id) {
             setReturnCharacter(id.id);
             setCheckedCharacter(true);
         }
     }
 
     return (
-        <form>
-            <select onChange={(evt) => choseCharacter(evt)}>
-                {characters.map(item =>
-                    <option key={item.id}>
-                        {item.name}
-                    </option>)}
-            </select>
+        <div className='search-form'>
+            <form className='search-form__form'>
+                <select aria-placeholder='chose character!' onChange={(evt) => choseCharacter(evt)}>
+                    <option>Select person...</option>
+                    {characters.map(item =>
+                        <option key={item.id}>
+                            {item.name}
+                        </option>)}
+                </select>
 
-            <button onClick={() => findByName(value)} type='button'/>
-        </form>
+                <button onClick={() => findByName(value)} type='button'/>
+            </form>
+        </div>
     );
 };
 

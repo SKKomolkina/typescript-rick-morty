@@ -1,23 +1,37 @@
 import React, {FunctionComponent} from 'react';
+import {useHistory} from "react-router-dom";
 import {Route, Redirect, Switch} from "react-router-dom";
 import axios from "axios";
 
 import './App.scss';
-import background from '../../images/background2.jpg';
+// import background from '../../images/background2.jpg';
 import logo from '../../images/logo.png';
 
 import SearchForm from '../SearchForm/SearchForm';
 import CharacterList from "../CharacterList/CharacterList";
 import {ICharacter} from "../../types/types";
 import CharacterPage from "../CharacterPage/CharacterPage";
+import StartPage from "../StartPage/StartPage";
 
 const App: FunctionComponent = () => {
+    const [startPage, setStartPage] = React.useState(true);
+    const [hoverLogo, setHoverLogo] = React.useState(false);
+
     const [characters, setCharacters] = React.useState<ICharacter[]>([]);
-
     const [selectedCharacter, setSelectedCharacter] = React.useState<object>({});
-    const [returnCharacter, setReturnCharacter] = React.useState<number>(0);
-
+    const [returnCharacter, setReturnCharacter] = React.useState<number>(1);
     const [checkedCharacter, setCheckedCharacter] = React.useState(false);
+
+    const history = useHistory();
+
+    React.useEffect(() => {
+        if (history.location.pathname !== '/') {
+            setStartPage(false);
+            console.log(startPage);
+        }
+    }, []);
+
+    // console.log(startPage);
 
     React.useEffect(() => {
         fetchCharacters();
@@ -35,11 +49,23 @@ const App: FunctionComponent = () => {
     }
 
     return (
-        <main className="application">
-            <img className='application__background' src={background} alt='background'/>
-            <img src={logo} alt={logo} className='application__logo'/>
+        <main className={startPage ? 'application-start' : 'application'}>
+
+            {startPage ? null :
+                (<img
+                    onMouseEnter={() => setHoverLogo(true)}
+                    onMouseOut={() => setHoverLogo(false)}
+                    src={logo} alt={logo}
+                    className={hoverLogo ? 'application__logo application__logo_hover' :
+                    'application__logo'}
+                />)}
+
             <Switch>
                 <Route exact path='/'>
+                    <StartPage setStartPage={setStartPage}/>
+                </Route>
+
+                <Route path='/main'>
                     <SearchForm
                         characters={characters}
 
@@ -52,10 +78,10 @@ const App: FunctionComponent = () => {
 
                     <CharacterList characters={characters}/>
 
-                    {checkedCharacter ? <Redirect to='/character'/> : null}
+                    {checkedCharacter ? <Redirect to={`/character/${returnCharacter.valueOf()}`}/> : null}
                 </Route>
 
-                <Route path='/character'>
+                <Route path={`/character/${returnCharacter.valueOf()}`}>
                     <CharacterPage returnCharacter={returnCharacter}/>
                 </Route>
             </Switch>

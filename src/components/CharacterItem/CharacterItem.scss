@@ -16,6 +16,8 @@
     font-size: 36px;
     color: rgb(0, 176, 200);
     text-shadow: rgba(132, 247, 58, 0.86) 1px 0.6px 0.8px;
+
+    cursor: pointer;
   }
 
   &__image {
@@ -24,11 +26,11 @@
 
     border-radius: 50%;
     //border: 3px rgba(132, 247, 58, 0.6) solid;
-    box-shadow: 0 0 81px -10px #84F73A;
-    transition: box-shadow .3s;
-
-    &:hover {
-      box-shadow: 20 20 100px -10px #84F73A;
+    cursor: pointer;
+    &_hover {
+      box-shadow: 0 0 81px -10px #84F73A;
+      transition: box-shadow .3s;
+      //box-shadow: 20 20 100px -10px #84F73A;
     }
   }
 }

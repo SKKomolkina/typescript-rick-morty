@@ -1,29 +1,32 @@
 import React, {FunctionComponent} from 'react';
 import axios from "axios";
 import {ICharacter} from "../../types/types";
+import {useHistory} from "react-router-dom";
 
 interface CharacterPageProps {
     returnCharacter: number
 }
 
-const CharacterPage:FunctionComponent<CharacterPageProps> = ({returnCharacter}) => {
-const [characterItem, setCharacterItem] = React.useState<ICharacter>();
+const CharacterPage: FunctionComponent<CharacterPageProps> = ({returnCharacter}) => {
+    const [characterItem, setCharacterItem] = React.useState<ICharacter>();
 
-    console.log(returnCharacter);
+    // const history = useHistory();
+    //
+    // React.useEffect(() => {
+    //     history.goBack();
+    // }, []);
 
     React.useEffect(() => {
         getCharacter(returnCharacter);
-    }, [returnCharacter]);
+    }, []);
 
     async function getCharacter(id: number) {
-        try{
+        try {
             const response = await axios.get(`https://rickandmortyapi.com/api/character/${id}`)
 
             const item = response.data;
             setCharacterItem(item);
-
-        }
-        catch (e) {
+        } catch (e) {
             console.log(e);
         }
     }
