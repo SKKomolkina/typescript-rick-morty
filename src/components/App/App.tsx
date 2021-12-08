@@ -1,10 +1,9 @@
 import React, {FunctionComponent} from 'react';
-import {useHistory} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 import {Route, Redirect, Switch} from "react-router-dom";
 import axios from "axios";
 
 import './App.scss';
-// import background from '../../images/background2.jpg';
 import logo from '../../images/logo.png';
 
 import SearchForm from '../SearchForm/SearchForm';
@@ -23,20 +22,23 @@ const App: FunctionComponent = () => {
     const [checkedCharacter, setCheckedCharacter] = React.useState(false);
 
     const history = useHistory();
+    const location = useLocation();
 
+    //
     React.useEffect(() => {
-        if (history.location.pathname !== '/') {
+        if (location.pathname === '/') {
+            setStartPage(true)
+        } else {
             setStartPage(false);
-            console.log(startPage);
         }
-    }, []);
-
-    // console.log(startPage);
+        console.log(location);
+    }, [location]);
 
     React.useEffect(() => {
         fetchCharacters();
     }, []);
 
+//
     async function fetchCharacters() {
         try {
             const response = await axios.get('https://rickandmortyapi.com/api/character')
@@ -48,43 +50,50 @@ const App: FunctionComponent = () => {
         }
     }
 
+//
     return (
         <main className={startPage ? 'application-start' : 'application'}>
+            <div>
+                {startPage ? null :
+                    (<img
+                        onMouseEnter={() => setHoverLogo(true)}
+                        onMouseOut={() => setHoverLogo(false)}
+                        src={logo} alt={logo}
+                        className={hoverLogo ? 'application__logo application__logo_hover' :
+                            'application__logo'}
+                    />)}
 
-            {startPage ? null :
-                (<img
-                    onMouseEnter={() => setHoverLogo(true)}
-                    onMouseOut={() => setHoverLogo(false)}
-                    src={logo} alt={logo}
-                    className={hoverLogo ? 'application__logo application__logo_hover' :
-                    'application__logo'}
-                />)}
+                <Switch>
+                    <Route exact path='/'>
+                        <StartPage setStartPage={setStartPage}/>
+                    </Route>
 
-            <Switch>
-                <Route exact path='/'>
-                    <StartPage setStartPage={setStartPage}/>
-                </Route>
+                    <Route path='/main'>
+                        <SearchForm
+                            characters={characters}
 
-                <Route path='/main'>
-                    <SearchForm
-                        characters={characters}
+                            selectedCharacter={selectedCharacter}
+                            setSelectedCharacter={setSelectedCharacter}
+                            setReturnCharacter={setReturnCharacter}
 
-                        selectedCharacter={selectedCharacter}
-                        setSelectedCharacter={setSelectedCharacter}
-                        setReturnCharacter={setReturnCharacter}
+                            setCheckedCharacter={setCheckedCharacter}
+                        />
 
-                        setCheckedCharacter={setCheckedCharacter}
-                    />
+                        <CharacterList characters={characters}/>
 
-                    <CharacterList characters={characters}/>
+                        {checkedCharacter ? <Redirect to={`/character/${returnCharacter.valueOf()}`}/> :
+                            null}
+                    </Route>
 
-                    {checkedCharacter ? <Redirect to={`/character/${returnCharacter.valueOf()}`}/> : null}
-                </Route>
+                    <Route path={`/character/${returnCharacter.valueOf()}`}>
+                        <CharacterPage returnCharacter={returnCharacter}/>
+                    </Route>
 
-                <Route path={`/character/${returnCharacter.valueOf()}`}>
-                    <CharacterPage returnCharacter={returnCharacter}/>
-                </Route>
-            </Switch>
+                    <Route path='*'>
+                        <Redirect to='/main'/>
+                    </Route>
+                </Switch>
+            </div>
         </main>
     );
 }
