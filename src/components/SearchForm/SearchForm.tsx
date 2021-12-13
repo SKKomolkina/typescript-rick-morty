@@ -32,7 +32,11 @@ const SearchForm: FunctionComponent<SearchFormProps> = (
     return (
         <div className='search-form'>
             <form className='search-form__form'>
-                <select aria-placeholder='chose character!' onChange={(evt) => choseCharacter(evt)}>
+                <select
+                    className='search-from__select'
+                    aria-placeholder='chose character!'
+                    onChange={(evt) => choseCharacter(evt)}
+                >
                     <option>Select person...</option>
                     {characters.map(item =>
                         <option key={item.id}>
@@ -40,7 +44,9 @@ const SearchForm: FunctionComponent<SearchFormProps> = (
                         </option>)}
                 </select>
 
-                <button onClick={() => findByName(value)} type='button'/>
+                <button className='search-form__button' onClick={() => findByName(value)} type='button'>
+                    Search
+                </button>
             </form>
         </div>
     );

@@ -15,13 +15,13 @@ import StartPage from "../StartPage/StartPage";
 const App: FunctionComponent = () => {
     const [startPage, setStartPage] = React.useState(true);
     const [hoverLogo, setHoverLogo] = React.useState(false);
+    const [vhsOn, setVhsOn] = React.useState(false);
 
     const [characters, setCharacters] = React.useState<ICharacter[]>([]);
     const [selectedCharacter, setSelectedCharacter] = React.useState<object>({});
     const [returnCharacter, setReturnCharacter] = React.useState<number>(1);
     const [checkedCharacter, setCheckedCharacter] = React.useState(false);
 
-    const history = useHistory();
     const location = useLocation();
 
     //
@@ -38,7 +38,7 @@ const App: FunctionComponent = () => {
         fetchCharacters();
     }, []);
 
-//
+    //
     async function fetchCharacters() {
         try {
             const response = await axios.get('https://rickandmortyapi.com/api/character')
@@ -50,10 +50,28 @@ const App: FunctionComponent = () => {
         }
     }
 
-//
+    React.useEffect(() => {
+        vhsAnimation();
+    }, []);
+
+    const vhsAnimation = () => {
+        window.setInterval(() => {
+            setVhsOn(true);
+        }, 3500);
+        window.setInterval(() => {
+            setVhsOn(false);
+        }, 2000);
+    }
+
+    //
     return (
-        <main className={startPage ? 'application-start' : 'application'}>
-            <div>
+        <main className='application'>
+
+            <div className={startPage ? 'application__wrapper_start' :
+                'application__wrapper'}>
+
+                {startPage ? '' : (<div className={vhsOn ? 'application__vhs' : ''}/>)}
+
                 {startPage ? null :
                     (<img
                         onMouseEnter={() => setHoverLogo(true)}
@@ -93,7 +111,9 @@ const App: FunctionComponent = () => {
                         <Redirect to='/main'/>
                     </Route>
                 </Switch>
+
             </div>
+
         </main>
     );
 }

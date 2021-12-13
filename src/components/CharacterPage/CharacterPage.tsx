@@ -10,12 +10,6 @@ interface CharacterPageProps {
 const CharacterPage: FunctionComponent<CharacterPageProps> = ({returnCharacter}) => {
     const [characterItem, setCharacterItem] = React.useState<ICharacter>();
 
-    // const history = useHistory();
-    //
-    // React.useEffect(() => {
-    //     history.goBack();
-    // }, []);
-
     React.useEffect(() => {
         getCharacter(returnCharacter);
     }, []);

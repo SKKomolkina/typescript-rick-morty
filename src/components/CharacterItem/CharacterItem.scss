@@ -1,4 +1,6 @@
 .character {
+  margin: 0 auto;
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -30,7 +32,11 @@
     &_hover {
       box-shadow: 0 0 81px -10px #84F73A;
       transition: box-shadow .3s;
-      //box-shadow: 20 20 100px -10px #84F73A;
+    }
+
+    @media (max-width: 890px) {
+      max-width: 200px;
+      max-height: 200px;
     }
   }
 }
