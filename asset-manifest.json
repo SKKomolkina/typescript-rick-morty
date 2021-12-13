@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/typescript-rick-morty/static/css/main.4f7aa333.chunk.css",
-    "main.js": "/typescript-rick-morty/static/js/main.333b22b7.chunk.js",
-    "main.js.map": "/typescript-rick-morty/static/js/main.333b22b7.chunk.js.map",
-    "runtime-main.js": "/typescript-rick-morty/static/js/runtime-main.af9246ff.js",
-    "runtime-main.js.map": "/typescript-rick-morty/static/js/runtime-main.af9246ff.js.map",
-    "static/js/2.4d8b59f2.chunk.js": "/typescript-rick-morty/static/js/2.4d8b59f2.chunk.js",
-    "static/js/2.4d8b59f2.chunk.js.map": "/typescript-rick-morty/static/js/2.4d8b59f2.chunk.js.map",
-    "index.html": "/typescript-rick-morty/index.html",
-    "static/css/main.4f7aa333.chunk.css.map": "/typescript-rick-morty/static/css/main.4f7aa333.chunk.css.map",
-    "static/js/2.4d8b59f2.chunk.js.LICENSE.txt": "/typescript-rick-morty/static/js/2.4d8b59f2.chunk.js.LICENSE.txt",
-    "static/media/logo.e5d5c523.png": "/typescript-rick-morty/static/media/logo.e5d5c523.png",
-    "static/media/portal.09620ccf.gif": "/typescript-rick-morty/static/media/portal.09620ccf.gif",
-    "static/media/App.scss": "/typescript-rick-morty/static/media/vhs.6887ac14.gif"
+    "main.css": "/typescript-rick-morty/homepage/static/css/main.d320fd34.chunk.css",
+    "main.js": "/typescript-rick-morty/homepage/static/js/main.bf24c771.chunk.js",
+    "main.js.map": "/typescript-rick-morty/homepage/static/js/main.bf24c771.chunk.js.map",
+    "runtime-main.js": "/typescript-rick-morty/homepage/static/js/runtime-main.d3406cb8.js",
+    "runtime-main.js.map": "/typescript-rick-morty/homepage/static/js/runtime-main.d3406cb8.js.map",
+    "static/js/2.4d8b59f2.chunk.js": "/typescript-rick-morty/homepage/static/js/2.4d8b59f2.chunk.js",
+    "static/js/2.4d8b59f2.chunk.js.map": "/typescript-rick-morty/homepage/static/js/2.4d8b59f2.chunk.js.map",
+    "index.html": "/typescript-rick-morty/homepage/index.html",
+    "static/css/main.d320fd34.chunk.css.map": "/typescript-rick-morty/homepage/static/css/main.d320fd34.chunk.css.map",
+    "static/js/2.4d8b59f2.chunk.js.LICENSE.txt": "/typescript-rick-morty/homepage/static/js/2.4d8b59f2.chunk.js.LICENSE.txt",
+    "static/media/logo.e5d5c523.png": "/typescript-rick-morty/homepage/static/media/logo.e5d5c523.png",
+    "static/media/portal.09620ccf.gif": "/typescript-rick-morty/homepage/static/media/portal.09620ccf.gif",
+    "static/media/App.scss": "/typescript-rick-morty/homepage/static/media/vhs.6887ac14.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.af9246ff.js",
+    "static/js/runtime-main.d3406cb8.js",
     "static/js/2.4d8b59f2.chunk.js",
-    "static/css/main.4f7aa333.chunk.css",
-    "static/js/main.333b22b7.chunk.js"
+    "static/css/main.d320fd34.chunk.css",
+    "static/js/main.bf24c771.chunk.js"
   ]
 }
