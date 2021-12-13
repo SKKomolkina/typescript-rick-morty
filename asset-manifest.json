@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.5e76bd52.chunk.css",
-    "main.js": "/static/js/main.333b22b7.chunk.js",
-    "main.js.map": "/static/js/main.333b22b7.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.620dadf9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.620dadf9.js.map",
-    "static/js/2.4d8b59f2.chunk.js": "/static/js/2.4d8b59f2.chunk.js",
-    "static/js/2.4d8b59f2.chunk.js.map": "/static/js/2.4d8b59f2.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.5e76bd52.chunk.css.map": "/static/css/main.5e76bd52.chunk.css.map",
-    "static/js/2.4d8b59f2.chunk.js.LICENSE.txt": "/static/js/2.4d8b59f2.chunk.js.LICENSE.txt",
-    "static/media/logo.e5d5c523.png": "/static/media/logo.e5d5c523.png",
-    "static/media/portal.09620ccf.gif": "/static/media/portal.09620ccf.gif",
-    "static/media/App.scss": "/static/media/vhs.6887ac14.gif"
+    "main.css": "/typescript-rick-morty/static/css/main.4f7aa333.chunk.css",
+    "main.js": "/typescript-rick-morty/static/js/main.333b22b7.chunk.js",
+    "main.js.map": "/typescript-rick-morty/static/js/main.333b22b7.chunk.js.map",
+    "runtime-main.js": "/typescript-rick-morty/static/js/runtime-main.af9246ff.js",
+    "runtime-main.js.map": "/typescript-rick-morty/static/js/runtime-main.af9246ff.js.map",
+    "static/js/2.4d8b59f2.chunk.js": "/typescript-rick-morty/static/js/2.4d8b59f2.chunk.js",
+    "static/js/2.4d8b59f2.chunk.js.map": "/typescript-rick-morty/static/js/2.4d8b59f2.chunk.js.map",
+    "index.html": "/typescript-rick-morty/index.html",
+    "static/css/main.4f7aa333.chunk.css.map": "/typescript-rick-morty/static/css/main.4f7aa333.chunk.css.map",
+    "static/js/2.4d8b59f2.chunk.js.LICENSE.txt": "/typescript-rick-morty/static/js/2.4d8b59f2.chunk.js.LICENSE.txt",
+    "static/media/logo.e5d5c523.png": "/typescript-rick-morty/static/media/logo.e5d5c523.png",
+    "static/media/portal.09620ccf.gif": "/typescript-rick-morty/static/media/portal.09620ccf.gif",
+    "static/media/App.scss": "/typescript-rick-morty/static/media/vhs.6887ac14.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.620dadf9.js",
+    "static/js/runtime-main.af9246ff.js",
     "static/js/2.4d8b59f2.chunk.js",
-    "static/css/main.5e76bd52.chunk.css",
+    "static/css/main.4f7aa333.chunk.css",
     "static/js/main.333b22b7.chunk.js"
   ]
 }
