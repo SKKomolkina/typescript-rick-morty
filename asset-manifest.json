@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/typescript-rick-morty/static/css/main.4f7aa333.chunk.css",
+    "main.css": "/typescript-rick-morty/static/css/main.d5c4431c.chunk.css",
     "main.js": "/typescript-rick-morty/static/js/main.333b22b7.chunk.js",
     "main.js.map": "/typescript-rick-morty/static/js/main.333b22b7.chunk.js.map",
     "runtime-main.js": "/typescript-rick-morty/static/js/runtime-main.af9246ff.js",
@@ -8,7 +8,7 @@
     "static/js/2.4d8b59f2.chunk.js": "/typescript-rick-morty/static/js/2.4d8b59f2.chunk.js",
     "static/js/2.4d8b59f2.chunk.js.map": "/typescript-rick-morty/static/js/2.4d8b59f2.chunk.js.map",
     "index.html": "/typescript-rick-morty/index.html",
-    "static/css/main.4f7aa333.chunk.css.map": "/typescript-rick-morty/static/css/main.4f7aa333.chunk.css.map",
+    "static/css/main.d5c4431c.chunk.css.map": "/typescript-rick-morty/static/css/main.d5c4431c.chunk.css.map",
     "static/js/2.4d8b59f2.chunk.js.LICENSE.txt": "/typescript-rick-morty/static/js/2.4d8b59f2.chunk.js.LICENSE.txt",
     "static/media/logo.e5d5c523.png": "/typescript-rick-morty/static/media/logo.e5d5c523.png",
     "static/media/portal.09620ccf.gif": "/typescript-rick-morty/static/media/portal.09620ccf.gif",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.af9246ff.js",
     "static/js/2.4d8b59f2.chunk.js",
-    "static/css/main.4f7aa333.chunk.css",
+    "static/css/main.d5c4431c.chunk.css",
     "static/js/main.333b22b7.chunk.js"
   ]
 }
